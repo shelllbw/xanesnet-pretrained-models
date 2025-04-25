@@ -8,27 +8,17 @@ descriptors:
 fourier_param:
   concat: true
 fourier_transform: false
-hyperparams:
-  batch_size: 64
-  bias_init: zeros
-  epochs: 100
-  kernel_init: xavier_uniform
-  loss:
-    loss_args: null
-    loss_fn: mse
-    loss_reg_param: 0.001
-    loss_reg_type: L2
-  lr: 0.0001
-  model_eval: true
-  optim_fn: Adam
-  seed: 2021
-  weight_seed: 2023
-lr_scheduler:
-  gamma: 0.5
-  step_size: 100
-  type: step
 mode: train_xyz
+model:
+  params:
+    activation: prelu
+    dropout: 0.2
+    hidden_size: 512
+    in_size: 49
+    num_hidden_layers: 5
+    out_size: 226
+    shrink_rate: 0.5
+  type: mlp
 model_dir: models/mlp_std_xyz_001
-model_type: mlp
 scheme: std
 standardscaler: false
